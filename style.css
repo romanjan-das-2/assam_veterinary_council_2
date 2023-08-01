@@ -87,3 +87,24 @@ body{
 .nav-menu>ul>li>ul>li:hover{
     background-color: #135a9c;
 }
+
+/*-------------------------------------- MAIN-CONTENT --------------------------------------------------*/
+
+.slideshow-1{
+    width: inherit;
+    height: 500px;
+    background-color: white;
+    padding: 10px;
+}
+.slideshow-1>div{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    white-space: nowrap;
+    width: 1000px;
+    height: 90%;
+}
+.slideshow-1>div>img{
+    width: auto;
+    height: inherit;
+}
