@@ -62,7 +62,7 @@
 
             for(i=0;i<numberOfSlides;i++){
                 document.getElementsByClassName("slide_pointers")[i].style.border = "1px solid gainsboro";
-                document.getElementsByClassName("slide_pointers")[i].style.borderRadius = "50%";
+                //document.getElementsByClassName("slide_pointers")[i].style.borderRadius = "50%";
                 document.getElementsByClassName("slide_pointers")[i].style.float = "left";
                 document.getElementsByClassName("slide_pointers")[i].id="slide_pointer_"+i;
                 document.getElementsByClassName("slide_pointers")[i].setAttribute("onclick","gotoSlide(this);");
@@ -136,7 +136,7 @@
                     document.getElementsByClassName("slide_pointers")[i].style.backgroundColor = "white";
                 }
                 document.getElementsByClassName("slide_pointers")[slideNumber].style.backgroundColor = "gainsboro";
-            }, 3000);
+            }, 4000);
         }
         function nextSlide(){
             slideNumber++;
@@ -173,41 +173,41 @@
         function resetTheDimensions(){
             slideWidth = document.getElementsByClassName("image_slideshow")[0].parentElement.clientWidth;
             imageSlideshow.style.width=slideWidth+"px";
-            imageSlideshow.style.height = slideWidth*7/10 + "px";
-            slidesContainer.style.height=slideWidth*6/10+"px";
+            imageSlideshow.style.height = slideWidth*5/10 + "px";
+            slidesContainer.style.height=slideWidth*4/10+"px";
             slidesContainer.style.width=(numberOfSlides*slideWidth+1)+"px";
             for(i=0;i<numberOfSlides;i++){
                 document.getElementsByClassName("slides")[i].style.width=slideWidth+"px";
-                document.getElementsByClassName("slides")[i].style.height=slideWidth*6/10+"px";
+                document.getElementsByClassName("slides")[i].style.height=slideWidth*4/10+"px";
             }
-            slideControls.style.height=slideWidth/10+"px";
+            slideControls.style.height=slideWidth/35+"px";
             slideControls.style.width=slideWidth+"px";
-            document.getElementsByClassName("slide_control_icon")[0].style.width = slideWidth/10+"px";
-            document.getElementsByClassName("slide_control_icon")[0].style.height = slideWidth/10+"px";
+            document.getElementsByClassName("slide_control_icon")[0].style.width = slideWidth/40+"px";
+            document.getElementsByClassName("slide_control_icon")[0].style.height = slideWidth/40+"px";
 
-            document.getElementsByClassName("slide_control_icon")[1].style.width = slideWidth/10+"px";
-            document.getElementsByClassName("slide_control_icon")[1].style.height = slideWidth/10+"px";
+            document.getElementsByClassName("slide_control_icon")[1].style.width = slideWidth/40+"px";
+            document.getElementsByClassName("slide_control_icon")[1].style.height = slideWidth/40+"px";
 
             document.getElementsByClassName("slide_control_pointer_bar")[0].style.width = (slideWidth - slideWidth/5)+"px";
             document.getElementsByClassName("slide_control_pointer_bar")[0].style.height = slideWidth/10+"px";
             
-            document.getElementsByClassName("slide_control_icon_img")[0].style.width = slideWidth/20+"px";
-            document.getElementsByClassName("slide_control_icon_img")[0].style.height = slideWidth/20+"px";
-            document.getElementsByClassName("slide_control_icon_img")[0].style.margin = slideWidth/40+"px";
-            document.getElementsByClassName("slide_control_icon_img")[1].style.width = slideWidth/20+"px";
-            document.getElementsByClassName("slide_control_icon_img")[1].style.height = slideWidth/20+"px";
-            document.getElementsByClassName("slide_control_icon_img")[1].style.margin = slideWidth/40+"px";
+            document.getElementsByClassName("slide_control_icon_img")[0].style.width = slideWidth/50+"px";
+            document.getElementsByClassName("slide_control_icon_img")[0].style.height = slideWidth/50+"px";
+            document.getElementsByClassName("slide_control_icon_img")[0].style.margin = slideWidth/200+"px";
+            document.getElementsByClassName("slide_control_icon_img")[1].style.width = slideWidth/50+"px";
+            document.getElementsByClassName("slide_control_icon_img")[1].style.height = slideWidth/50+"px";
+            document.getElementsByClassName("slide_control_icon_img")[1].style.margin = slideWidth/200+"px";
 
             for(i=0;i<numberOfSlides;i++){
-                document.getElementsByClassName("slide_pointers")[i].style.width = slideWidth/25+"px";
-                document.getElementsByClassName("slide_pointers")[i].style.height = slideWidth/25+"px";
-                document.getElementsByClassName("slide_pointers")[i].style.marginLeft = slideWidth/50+"px";
+                document.getElementsByClassName("slide_pointers")[i].style.width = slideWidth/55+"px";
+                document.getElementsByClassName("slide_pointers")[i].style.height = slideWidth/55+"px";
+                document.getElementsByClassName("slide_pointers")[i].style.marginLeft = slideWidth/30+"px";
             }
             
             //document.getElementsByClassName("slide_control_pointer_container")[0].style.width = (slideWidth/16 + slideWidth/50)*numberOfSlides+"px";
             document.getElementsByClassName("slide_control_pointer_container")[0].style.marginLeft= (((slideWidth - slideWidth/5)-(slideWidth/25 + slideWidth/50)*numberOfSlides)/2 - slideWidth/50)+"px";
-            document.getElementsByClassName("slide_control_pointer_container")[0].style.height = slideWidth/10+"px";     
-            document.getElementsByClassName("slide_control_pointer_container")[0].style.paddingTop = (slideWidth/11 - slideWidth/25)/2+"px";
+            document.getElementsByClassName("slide_control_pointer_container")[0].style.height = slideWidth/35+"px";     
+            document.getElementsByClassName("slide_control_pointer_container")[0].style.paddingTop = (slideWidth/11 - slideWidth/25)/11+"px";
 
             slidesContainer.style.transform="translateX(-"+slideWidth*slideNumber+"px)";
         }
