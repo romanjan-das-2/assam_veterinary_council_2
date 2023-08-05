@@ -47,6 +47,7 @@ body{
     display: flex;
 }
 .nav-menu{
+    z-index: 3;
     grid-area: nav-menu;
     height: 31px;
     background-color: #2a75bb;
@@ -91,7 +92,17 @@ body{
 /*-------------------------------------- MAIN-CONTENT --------------------------------------------------*/
 
 .slideshow-1{
-    width: inherit;
-    height: 500px;
+    width: 100%;
+    height: 300px;
     background-color: white;
+}
+.introduction{
+    width: 100%;
+    height: 50px;
+    background-color: yellow;
+}
+.main-content{
+    display: flex;
+    flex-direction: row;
+    height: 700px;
 }
