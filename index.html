@@ -213,6 +213,23 @@
             //document.getElementsByClassName("slideshow-1")[0].style.height=slideWidth/2+"px";
         }
     </script>
+    <script>
+        window.onresize = resize;
+        var ch=0; var cw=0;
+        function resize()
+        {   
+            cw=document.getElementsByClassName("main-content")[0].clientWidth;
+            ch=document.getElementsByClassName("main-content")[0].clientHeight;
+            document.getElementsByClassName("introduction")[0].style.width=(cw-500)+"px";
+            console.log(ch);
+            document.getElementById("doctors_login").style.paddingTop=ch+"px";
+        }    
+        function set_intro_height(){
+            document.getElementsByClassName("introduction")[0].style.height=document.getElementById("slideshow-1-div").clientHeight+"px";
+            ch=document.getElementsByClassName("main-content")[0].clientHeight;
+            document.getElementById("doctors_login").style.paddingTop=document.getElementById("slideshow-1-div").clientHeight+"px";
+        }
+    </script>
     <style>
         .slide_control_pointer_container{
             display: flex;
@@ -227,7 +244,7 @@
         }
     </style>
 </head>
-<body onload="slideshowInitialise();">
+<body onload="slideshowInitialise(); set_intro_height();">
     <div class="left-div"></div>
     <div class="right-div"></div>
     <div class="header">
@@ -256,7 +273,7 @@
     </div>
     <div class="main-content">
         <div class="slideshow-1">
-            <div  style="position: static; width: 100%; padding: 0px; padding-top: 10px; margin: 0px;">
+            <div id="slideshow-1-div" style="position: static; width: 100%; padding: 0px; padding-top: 10px; margin: 0px;">
                 
         <!----------------------------------------------Slideshow------------------------------------------------------------------------->
         <!---Put the slideshow inside a div with predefined dimensions,slideshows dimensions depend on the parent width only-------------->
@@ -286,11 +303,16 @@
             </div>
         </div>
         <div class="introduction">
-            <h1>Introduction</h1>
+            <h1 style="border-bottom: 2px darkblue solid;">Introduction</h1>
             <p>The National Commission of Agriculture recommended to give high priority to the formation of Statutory Veterinary Council in the state and veterinary council in the centre. In view of the above, the Govt. of India has enacted Indian Veterinary Council Act, 1984 in which there is a provision under Section 32 of the said Act for constitution of State Veterinary Council.</p>
             <p>In Assam, the Assam Veterinary Council Act, 1979 and rule thereunder have been enforced with effect from 15th May 1981. The Assam Veterinary Council has formed under the Assam Veterinary Council Act, 1979 (Assam Act I of 1980) to provide for regulation of Veterinary Practitioners in Assam, to control and regulate the conduct of the members of the profession who are veterinary graduate to uphold the status and dignity of profession and also act as an Advisory Body to the State Govt. in the matter of Veterinary Profession, Education and development of animal husbandry in the state.</p>
             <p>Later on, the Govt. of India enacted an Act “The Indian Veterinary Council Act, 1984” as per provision under Article 252(I) of Constitution of India to regulate by law veterinary training, practice and all matters connected therewith and this act has already been adopted in various states like Haryana, Himachal Pradesh and also Union territories. The Government of India requested the Assam Government to adopt the Central Act, 1984 in our State by adopting a resolution in the State Assembly by virtue of the Power under Clause (I) of Article 252 of the Constitution of India to facilitate having a uniform law throughout India for regulation of veterinary training and practice and for allied matters. As in Central Law, there is a provision for Constitution of State Veterinary Council which would act under the guidance of the Indian Veterinary Council.</p>
             <p>In exercise of powers conferred by Clause (I) of article 252 of the Constitution of India, the Assam Legislative Assembly adopted a resolution in 1st December 1989 for extension of the Central Act, 1984 in the state of Assam to facilitate conferred enforcement of uniform laws to regulate Veterinary Education, Training, and Veterinary Practices and for allied matters.</p>
+        </div>
+
+        <div id="doctors_login">
+            <h1>Doctor's Login</h1>
+            <p>Please login for Registration renewal, profile information update...</p>
         </div>
     </div>
     <div class="footer">footer</div>
