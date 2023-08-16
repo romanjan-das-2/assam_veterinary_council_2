@@ -219,15 +219,12 @@
         function resize()
         {   
             cw=document.getElementsByClassName("main-content")[0].clientWidth;
-            ch=document.getElementsByClassName("main-content")[0].clientHeight;
             document.getElementsByClassName("introduction")[0].style.width=(cw-500)+"px";
             console.log(ch);
-            document.getElementById("doctors_login").style.paddingTop=ch+"px";
         }    
         function set_intro_height(){
             document.getElementsByClassName("introduction")[0].style.height=document.getElementById("slideshow-1-div").clientHeight+"px";
-            ch=document.getElementsByClassName("main-content")[0].clientHeight;
-            document.getElementById("doctors_login").style.paddingTop=document.getElementById("slideshow-1-div").clientHeight+"px";
+            document.getElementById("main-content-2").style.top=document.getElementById("slideshow-1-div").clientHeight+180+"px";
         }
     </script>
     <style>
@@ -244,7 +241,7 @@
         }
     </style>
 </head>
-<body onload="slideshowInitialise(); set_intro_height();">
+<body onload="slideshowInitialise(); set_intro_height(); resize();">
     <div class="left-div"></div>
     <div class="right-div"></div>
     <div class="header">
@@ -310,9 +307,34 @@
             <p>In exercise of powers conferred by Clause (I) of article 252 of the Constitution of India, the Assam Legislative Assembly adopted a resolution in 1st December 1989 for extension of the Central Act, 1984 in the state of Assam to facilitate conferred enforcement of uniform laws to regulate Veterinary Education, Training, and Veterinary Practices and for allied matters.</p>
         </div>
 
-        <div id="doctors_login">
-            <h1>Doctor's Login</h1>
-            <p>Please login for Registration renewal, profile information update...</p>
+        <div id="main-content-2">
+            <span>Latest news and updates</span><br><br>
+            Stay tuned for latest news from Assam Veterinary Council
+            <br><br><br>
+            <span>Present Status of Assam Veterinary Council</span><br>
+            <ol>
+                <li>Date of first constitution of the Council is 21st July, 1982.</li>
+                <li>Date of Last constitution of the council is 08.03.2022 (Govt. Notification at Annexure-A)</li>
+                <li>Date of last election of the President of the Council is 02.04.2022.</li>
+                <li>Total number of veterinary practitioners registered their name under Assam Veterinary Council till to-day on 10.07.2023 is 3336 numbers.</li>
+            </ol>
+            <span>Present Body of Assam Veterinary Council</span>
+            <ul>
+                <li>The President : Dr. Dandeswar Deka</li>
+                <li>The Vice-President : Dr. Pranjit Baruah</li>
+                <li>The Registrar : Dr. Biswajit Boral</li>
+                <li>The Council Members -
+                    <ul>
+                    <li>Dr. Bibeka Nanda Saikia - Dean, CVSC Ex-officio member</li>
+                    <li>Director, Animal Husbandry & Vety Deptt. Ex-officio member</li>
+                    <li>Dr. Sankar Prasad Lahkar</li>
+                    <li>Dr. Manoj Kumar Goswami</li>
+                    <li>Dr. Apurba Goswami</li>
+                    <li>Dr. Utpal Barman</li>
+                    <li>Dr. Santanu Kr. Changmai</li>
+                    <li>Dr. Nurul Islam  <button id="read_more_about_council" onclick="read_more_about_council();">......Read more</button></li>
+                </ul></li>
+            </ul>
         </div>
     </div>
     <div class="footer">footer</div>
