@@ -216,15 +216,21 @@
     <script>
         window.onresize = resize;
         var ch=0; var cw=0;
+        var more_about_council="<ul><li>The Assam Veterinary Council in its 2nd meeting of the newly reconstituted council held on 10.05.2022, a Disciplinary Committee has been formed under the Section 31 (1) & (2) of VCI Act. 1984, as under to examine complaint received by the council against unethical veterinary practice. The new disciplinary committee already disposed total 10 (ten) complaints till today.<li>Members of Disciplinary Committee: <ul><li>Dr. Sankar Prasad Lahkar - President</li><li>Dr. B. Boral - Convener</li><li>Dr. M. K. Goswami - Member</li><li>Dr. A. Goswami - Member</li><li>Dr. Nurul Islam - Member</li></ul></li><li>Assam Veterinary Council will be able to renew their registration online. For more information visit us at www.assamveterinarycouncil.com.</li><li>The State Veterinary Council has its own G+2 RCC building at the Veterinary Directorate campus at Chenikuthi, Guwahati-781003. The Council office and conference hall at the Ground Floor, the first floor and second floor are the Guest House to provide in house facility to a batch of 20 (twenty) nos. of trainees at a time including a VIP suit, Kitchen & dining etc. Other than trainees the veterinarians of the state and outside state are also allowed to accommodate at a minimum rental charges.</li></ul>";
         function resize()
         {   
             cw=document.getElementsByClassName("main-content")[0].clientWidth;
             document.getElementsByClassName("introduction")[0].style.width=(cw-500)+"px";
+            document.getElementById("main-content-2").style.width=cw+"px";
             console.log(ch);
         }    
         function set_intro_height(){
             document.getElementsByClassName("introduction")[0].style.height=document.getElementById("slideshow-1-div").clientHeight+"px";
             document.getElementById("main-content-2").style.top=document.getElementById("slideshow-1-div").clientHeight+180+"px";
+        }
+        function read_more_about_council(){
+            document.getElementById("more_about_council").innerHTML=more_about_council;
+            document.getElementById("read_more_about_council").style.display="none";
         }
     </script>
     <style>
@@ -335,6 +341,7 @@
                     <li>Dr. Nurul Islam  <button id="read_more_about_council" onclick="read_more_about_council();">......Read more</button></li>
                 </ul></li>
             </ul>
+            <div id="more_about_council"></div>
         </div>
     </div>
     <div class="footer">footer</div>
