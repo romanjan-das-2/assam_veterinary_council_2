@@ -7,7 +7,7 @@ body{
     display: grid;
     grid-template-areas:'left-div header right-div'
                         'left-div main-content right-div'
-                        'left-div footer right-div';
+                        'left-div main-content right-div';
     gap: 0px;
     margin: 0px;
 }
@@ -17,6 +17,7 @@ body{
                          'nav-menu';
     grid-area: header;
     background-color: #ffffff;
+    box-shadow: 0px 0px 8px #888888;
 }
 .left-div{
     grid-area: left-div;
@@ -26,10 +27,6 @@ body{
 }
 .main-content{
     grid-area: main-content;
-}
-.footer{
-    grid-area: footer;
-    background-color: #87bdd8;
 }
 .logo{
     grid-area: logo;
@@ -89,18 +86,18 @@ body{
 }
 
 /*-------------------------------------- MAIN-CONTENT --------------------------------------------------*/
-.main-content{
-    height: max-content;
-}
 .slideshow-1{
     position: absolute;
     width: 500px;
     height: 300px;
+    margin-left: 1%;
+    margin-top: 0.5%;
     background-color: white;
 }
 .introduction{
     position: absolute;
-    margin-left: 500px;
+    margin-left: 550px;
+    margin-top: 0.5%;
     width: 700px;
     background-color: white;
     padding: 0px 10px 10px 10px;
@@ -108,6 +105,7 @@ body{
 }
 #main-content-2{
     position: absolute;
+    padding-top: 1%;
 }
 #main-content-2>span{
     font-size: large;
@@ -118,4 +116,33 @@ body{
     background-color: transparent;
     border: transparent;
     color: #135a9c;
+}
+.footer{
+    display: flex;
+    width: 100%;
+    bottom: 0px;
+    border-top: 2px darkblue solid;
+    padding: 20px 3% 100px 3%;
+    justify-content: space-between;
+    background-color: #a7d5ff; /* For browsers that do not support gradients */
+    background-image: linear-gradient(180deg, #a7d5ff, white);
+}
+.footer>div>a{
+    text-decoration: none;
+    color: black;
+}
+
+.main-content{
+    box-shadow: 0px 0px 8px #888888;
+    height: 1900px;
+}
+#main-content-2>span,ul,ol{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.under_span_text{
+    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
