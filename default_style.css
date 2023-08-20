@@ -10,6 +10,7 @@ body{
                         'left-div footer right-div';
     gap: 0px;
     margin: 0px;
+    justify-items: center;
 }
 .header{
     display: grid;
@@ -18,6 +19,7 @@ body{
     grid-area: header;
     background-color: #ffffff;
     box-shadow: 0px 0px 8px #888888;
+    width: 72.5%;
 }
 .left-div{
     grid-area: left-div;
@@ -33,6 +35,7 @@ body{
 .footer{
     grid-area: footer;
     min-height: 300px;
+    width: 72.5%;
     background-color: #a7d5ff; /* For browsers that do not support gradients */
     background-image: linear-gradient(180deg, #a7d5ff, white);
     box-shadow: 0px 0px 8px #888888;
@@ -92,4 +95,54 @@ body{
 }
 .nav-menu>ul>li>ul>li:hover{
     background-color: #135a9c;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10%;
+    width: 72.5%;
+}
+.main-content-title{
+    display: flex; 
+    align-items: center; 
+    padding-top: 7%; 
+    padding-bottom: 7%; 
+    font-size: 40px; 
+    font-weight: bold; 
+    color: #2a75bb;
+}
+
+/*----------------------------- TRAININGS ORGANISED-------------------------------------*/
+.trainings_orgainsed_class{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.trainings_orgainsed_class>img{
+    width: 100%;
+}
+
+/*----------------------------- SNAPSHOTS OF ACTIVITIES -------------------------------*/
+.snapshots_of_activities_class{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.snapshots_of_activities_class>img{
+    width: 70%;
+    border: 1px gainsboro solid;
+}
+.snapshots_of_activities_class>div{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding: 1% 2% 3% 5%;
+    margin-bottom: 7%;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px gainsboro solid;
 }
