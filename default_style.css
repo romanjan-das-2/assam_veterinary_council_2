@@ -154,3 +154,14 @@ body{
     align-items: center;
     width: 100%;
 }
+.council_acts>div{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 0px 8px #888888;
+}
