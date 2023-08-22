@@ -31,12 +31,30 @@ body{
     min-height: 900px;
     box-shadow: 0px 0px 8px #888888;
 }
+/*
 .footer{
     grid-area: footer;
     min-height: 300px;
-    background-color: #a7d5ff; /* For browsers that do not support gradients */
-    background-image: linear-gradient(180deg, #a7d5ff, white);
+    background-color: #2a75bb;
+    color: white;
     box-shadow: 0px 0px 8px #888888;
+}
+*/
+.footer{
+    grid-area: footer;
+    min-height: 300px;
+    display: flex;
+    width: 100%;
+    padding: 20px 3% 100px 3%;
+    justify-content: space-between;
+    background-color: #2a75bb;
+    color: white;
+    box-shadow: 0px 0px 8px #888888;
+}
+.footer>div>span{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 .logo{
     grid-area: logo;
@@ -239,12 +257,12 @@ body{
 .council_acts{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     font-weight: bold;
 }
 .council_acts>div{
-    padding: 2% 2% 2% 10%;
+    padding: 2% 2% 2% 2%;
 }
 .council_acts>div>span{
     color: red;
@@ -254,7 +272,7 @@ body{
 .download-forms-class{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     font-weight: bold;
 }
@@ -262,7 +280,7 @@ body{
     display: flex;
     justify-content: space-between;
     min-width: 60%;
-    padding: 2% 2% 2% 10%;
+    padding: 2% 2% 2% 2%;
 }
 .download-forms-class>div>span{
     color: red;
