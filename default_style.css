@@ -40,17 +40,25 @@ body{
 }
 .logo{
     grid-area: logo;
-    width: 100px;
-    height: 100px;
+    height: 100%;
 }
 .logo>img{
     width: 100%;
     height: 100%;
 }
+.govt_logo{
+    height: 100%;
+}
+.govt_logo>img{
+    width: 100%;
+    height: 100%;
+}
 .main-header{
+    height: 160px;
     grid-area: main-header;
-    padding-top: 20px;
+    padding: 20px 20px 20px;
     display: flex;
+    align-items: flex-start;
 }
 .nav-menu{
     z-index: 3;
@@ -175,7 +183,25 @@ body{
         font-size: 40px;
     }
 }
-
+.logo{
+    margin-right: 20px;
+}
+.header-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 77%;
+}
+.header-text-span-1{
+    font-size: 34px;
+    font-weight: bold;
+    color: #135a9c;
+}
+.header-text-span-2{
+    font-size: 25px;
+    font-weight: bold;
+    color: #d90000;
+}
 /*----------------------------- TRAININGS ORGANISED-------------------------------------*/
 .trainings_orgainsed_class{
     display: flex;
