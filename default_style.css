@@ -267,3 +267,19 @@ body{
 .download-forms-class>div>span{
     color: red;
 }
+/*-------------------------------CONTACT US--------------------------------*/
+.contact-class{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2%;
+}
+.contact-class>div{
+    margin: 2%;
+    float: left;
+}
+.contact-class>div>span{
+    font-weight: bold;
+    color: #135a9c;
+    margin-left: 5%;
+}
