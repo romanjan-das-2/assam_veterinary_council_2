@@ -136,7 +136,7 @@ body{
     font-weight: bold; 
     color: #2a75bb;
 }
-@media only screen and (max-width:939px){
+@media only screen and (max-width:939px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 100%;
     }
@@ -144,7 +144,7 @@ body{
         font-size: 33px;
     }
 }
-@media only screen and (min-width: 940px){
+@media only screen and (min-width: 940px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 100%;
     }
@@ -152,7 +152,7 @@ body{
         font-size: 34px;
     }
 }
-@media only screen and (min-width: 980px){
+@media only screen and (min-width: 980px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 940px;
     }
@@ -160,7 +160,7 @@ body{
         font-size: 35px;
     }
 }
-@media only screen and (min-width: 1166px){
+@media only screen and (min-width: 1166px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 1000px;
     }
@@ -168,7 +168,7 @@ body{
         font-size: 36px;
     }
 }
-@media only screen and (min-width: 1366px){
+@media only screen and (min-width: 1366px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 1047px;
     }
@@ -176,7 +176,7 @@ body{
         font-size: 37px;
     }
 }
-@media only screen and (min-width: 1566px){
+@media only screen and (min-width: 1566px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 1133px;
     }
@@ -184,7 +184,7 @@ body{
         font-size: 38px;
     }
 }
-@media only screen and (min-width: 1766px){
+@media only screen and (min-width: 1766px) and (orientation: landscape){
     .main-content,.header,.footer{
         width: 1200px;
     }
@@ -192,7 +192,7 @@ body{
         font-size: 39px;
     }
 }
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1920px)  and (orientation: landscape){
     .main-content,.header,.footer{
         width: 1231px;
     }
@@ -296,8 +296,89 @@ body{
     margin: 2%;
     float: left;
 }
+.contact-map{
+    width: 54%; background-color: gainsboro;
+}
+.contact-general{
+    width: 36%;
+}
 .contact-class>div>span{
     font-weight: bold;
     color: #135a9c;
     margin-left: 5%;
+}
+
+
+@media only screen and (orientation: portrait){
+    *{
+        font-size: 15px;
+
+    }
+    body{
+        display: grid;
+        grid-template-areas:'header'
+                            'main-content'
+                            'footer';
+    }
+    .left-div,.right-div{
+        display: none;
+    }
+    .main-content{
+        min-height: 500px;
+    }
+    .main-content,.header,.footer{
+        width: 100%;
+    }
+    .main-header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px 0px 20px;
+    }
+    .logo{
+        margin: 5px 5px 5px 5px;
+    }
+    .govt_logo{
+        display: none;
+    }
+    .header-text-span-1{
+        font-size: 21px;
+    }
+    .header-text-span-2{
+        font-size: 18px;
+    }
+    .main-content-title{
+        font-size: 22px;
+    }
+    .nav-menu>ul{
+        display: none;
+    }
+    .footer{
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 0px 0px 0px;
+    }
+    .footer>div{
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .download-forms-class{
+        align-items: stretch;
+    }
+    .contact-class{
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-map{
+        width: 97%; background-color: gainsboro; margin-top: 5px;
+    }
+    .contact-general{
+        width: 97%;
+    }
+    .snapshots_of_activities_class>div{
+        width: 96%;
+        height: auto;
+        padding-bottom: 2%;
+    }
 }
