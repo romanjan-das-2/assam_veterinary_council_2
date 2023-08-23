@@ -19,8 +19,21 @@
             </div>
             <div class="govt_logo"><img src="images/govt_logo.png" alt=""></div>
         </div>
+        <script>
+            var nav_menu_status=false;
+            function expand_nav_menu(){
+                if(!nav_menu_status){
+                    document.getElementById('expanded-portrait-nav-menu').style.display='flex';
+                    nav_menu_status=true;
+                }
+                else{
+                    document.getElementById('expanded-portrait-nav-menu').style.display='none';
+                    nav_menu_status=false;
+                }
+            }
+        </script>
         <div class="nav-menu">
-            <div onclick="document.getElementById('expanded-portrait-nav-menu').style.display='flex';" class="portrait-nav-menu">MENU &nbsp;<img src="images/ham_menu.png" alt=""></div>
+            <div onclick="expand_nav_menu();" class="portrait-nav-menu">MENU &nbsp;<img src="images/ham_menu.png" alt=""></div>
             <div id="expanded-portrait-nav-menu">
                 <br><span onclick="window.location.href='index.html';">Home</span>
                 <br><span>Registration Renewal</span>
