@@ -182,6 +182,113 @@ body{
     font-weight: bold;
     color: #d90000;
 }
+@media only screen and (orientation: portrait){
+    *{
+        font-size: 15px;
+
+    }
+    body{
+        display: grid;
+        grid-template-areas:'header'
+                            'main-content'
+                            'footer';
+    }
+    .left-div,.right-div{
+        display: none;
+    }
+    .main-content{
+        min-height: 500px;
+    }
+    .main-content,.header,.footer{
+        width: 100%;
+    }
+    .main-header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px 0px 20px;
+    }
+    .logo{
+        height: 80%;
+        margin: 5px 5px 5px 5px;
+    }
+    .govt_logo{
+        display: none;
+    }
+    .header-text-span-1{
+        font-size: 21px;
+    }
+    .header-text-span-2{
+        font-size: 18px;
+    }
+    .main-content-title{
+        font-size: 22px;
+    }
+    .nav-menu>ul{
+        display: none;
+    }
+    .footer{
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 0px 0px 0px;
+    }
+    .footer>div{
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .download-forms-class{
+        align-items: stretch;
+    }
+    .contact-class{
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-map{
+        width: 97%; background-color: gainsboro; margin-top: 5px;
+    }
+    .contact-general{
+        width: 97%;
+    }
+    .snapshots_of_activities_class>div{
+        width: 96%;
+        height: auto;
+        padding-bottom: 2%;
+    }
+    .nav-menu{
+        height: auto;
+    }
+    .portrait-nav-menu{
+        display: flex; align-items: center;
+        height:31px;color:white;float:right;margin-right:2%;
+    }
+    .portrait-nav-menu>img{
+        height: 60%;
+    }
+    #expanded-portrait-nav-menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding-bottom: 30px;
+        background-color: #135a9c;
+        z-index: 4;
+    }
+    .introduction{
+        display: none;
+    }
+    .slideshow-1{
+        position: relative;
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    #main-content-2{
+        position: static;
+    }
+}
     </style>
     <script>
         var checkDimIntv;
@@ -438,7 +545,32 @@ body{
             </div>
             <div class="govt_logo"><img src="images/govt_logo.png" alt=""></div>
         </div>
+        <script>
+            var nav_menu_status=false;
+            function expand_nav_menu(){
+                if(!nav_menu_status){
+                    document.getElementById('expanded-portrait-nav-menu').style.display='flex';
+                    nav_menu_status=true;
+                }
+                else{
+                    document.getElementById('expanded-portrait-nav-menu').style.display='none';
+                    nav_menu_status=false;
+                }
+            }
+        </script>
         <div class="nav-menu">
+            <div onclick="expand_nav_menu();" class="portrait-nav-menu">MENU &nbsp;<img src="images/ham_menu.png" alt=""></div>
+            <div id="expanded-portrait-nav-menu">
+                <br><span onclick="window.location.href='index.html';">Home</span>
+                <br><span>Registration Renewal</span>
+                <br><span onclick="window.location.href='trainings_organised.html';">Trainings Orgainsed</span>
+                <br><span onclick="window.location.href='registration_renewal_transfer.html';">Registration, Renewal, Transfer Data</span>
+                <br><span onclick="window.location.href='snapshots_of_activities.html';">Snapshots of Activities</span>
+                <br><span onclick="window.location.href='council_acts.html';">Council Acts</span>
+                <br><span onclick="window.location.href='download_forms.html';">Download Forms</span>
+                <br><span onclick="window.location.href='guest_house.html';">Guest House</span>
+                <br><span onclick="window.location.href='contact.html';">Contact Us</span>
+            </div>
             <ul>
                 <li onclick="window.location.href='index.html';">Home</li>
                 <li>Registration Renewal</li>
