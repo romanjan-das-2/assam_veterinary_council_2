@@ -182,6 +182,12 @@ body{
     font-weight: bold;
     color: #d90000;
 }
+.portrait-nav-menu{
+    display: none;
+}
+#expanded-portrait-nav-menu{
+    display: none;
+}
 @media only screen and (orientation: portrait){
     *{
         font-size: 15px;
@@ -277,7 +283,10 @@ body{
         z-index: 4;
     }
     .introduction{
-        display: none;
+        position: static;
+        margin-left: 0px;
+        margin-top: 10px;
+        width: 100%;
     }
     .slideshow-1{
         position: relative;
@@ -287,6 +296,9 @@ body{
     }
     #main-content-2{
         position: static;
+    }
+    .main-content{
+        height: auto;
     }
 }
     </style>
