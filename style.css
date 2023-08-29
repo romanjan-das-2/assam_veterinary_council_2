@@ -345,6 +345,7 @@ body{
     background-color: transparent;
     border: transparent;
     color: #135a9c;
+    cursor: pointer;
 }
 #main-content-2>span,ul,ol{
     margin-left: 2%;
