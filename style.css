@@ -143,6 +143,9 @@ body{
     .introduction{
         height: 370px;
     }
+    .introduction p{
+        line-height: 1.25;
+    }
 }
 @media only screen and (min-width: 940px) and (orientation: landscape){
     .main-content,.header,.footer{
@@ -153,6 +156,9 @@ body{
     }
     .introduction{
         height: 370px;
+    }
+    .introduction p{
+        line-height: 1.3;
     }
 }
 @media only screen and (min-width: 980px) and (orientation: landscape){
@@ -165,6 +171,9 @@ body{
     .introduction{
         height: 378px;
     }
+    .introduction p{
+        line-height: 1.35;
+    }
 }
 @media only screen and (min-width: 1166px) and (orientation: landscape){
     .main-content,.header,.footer{
@@ -175,6 +184,9 @@ body{
     }
     .introduction{
         height: 402px;
+    }
+    .introduction p{
+        line-height: 1.5;
     }
 }
 @media only screen and (min-width: 1366px) and (orientation: landscape){
@@ -187,6 +199,9 @@ body{
     .introduction{
         height: 420px;
     }
+    .introduction p{
+        line-height: 1.6;
+    }
 }
 @media only screen and (min-width: 1566px) and (orientation: landscape){
     .main-content,.header,.footer{
@@ -197,6 +212,9 @@ body{
     }
     .introduction{
         height: 450px;
+    }
+    .introduction p{
+        line-height: 1.8;
     }
 }
 @media only screen and (min-width: 1766px) and (orientation: landscape){
@@ -209,6 +227,9 @@ body{
     .introduction{
         height: 480px;
     }
+    .introduction p{
+        line-height: 2.1;
+    }
 }
 @media only screen and (min-width: 1920px)  and (orientation: landscape){
     .main-content,.header,.footer{
@@ -219,6 +240,9 @@ body{
     }
     .introduction{
         height: 490px;
+    }
+    .introduction p{
+        line-height: 2.2;
     }
 }
 .logo{
@@ -350,7 +374,7 @@ body{
     width: 50%;
 }
 .introduction{
-    overflow-y: scroll;
+    overflow-y: hidden;
     box-sizing: border-box;
     padding: 2px 2px 2px 20px;
     line-height: 1.5;
@@ -404,6 +428,7 @@ body{
         width: 100%;
     }
     .introduction{
+        height: auto;
         padding: 2px 2px 2px 2px;
         line-height: 1.6;
     }
