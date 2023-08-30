@@ -140,6 +140,9 @@ body{
     .main-content-title{
         font-size: 33px;
     }
+    .introduction{
+        height: 370px;
+    }
 }
 @media only screen and (min-width: 940px) and (orientation: landscape){
     .main-content,.header,.footer{
@@ -147,6 +150,9 @@ body{
     }
     .main-content-title{
         font-size: 34px;
+    }
+    .introduction{
+        height: 370px;
     }
 }
 @media only screen and (min-width: 980px) and (orientation: landscape){
@@ -156,6 +162,9 @@ body{
     .main-content-title{
         font-size: 35px;
     }
+    .introduction{
+        height: 378px;
+    }
 }
 @media only screen and (min-width: 1166px) and (orientation: landscape){
     .main-content,.header,.footer{
@@ -163,6 +172,9 @@ body{
     }
     .main-content-title{
         font-size: 36px;
+    }
+    .introduction{
+        height: 402px;
     }
 }
 @media only screen and (min-width: 1366px) and (orientation: landscape){
@@ -172,6 +184,9 @@ body{
     .main-content-title{
         font-size: 37px;
     }
+    .introduction{
+        height: 420px;
+    }
 }
 @media only screen and (min-width: 1566px) and (orientation: landscape){
     .main-content,.header,.footer{
@@ -179,6 +194,9 @@ body{
     }
     .main-content-title{
         font-size: 38px;
+    }
+    .introduction{
+        height: 450px;
     }
 }
 @media only screen and (min-width: 1766px) and (orientation: landscape){
@@ -188,6 +206,9 @@ body{
     .main-content-title{
         font-size: 39px;
     }
+    .introduction{
+        height: 480px;
+    }
 }
 @media only screen and (min-width: 1920px)  and (orientation: landscape){
     .main-content,.header,.footer{
@@ -195,6 +216,9 @@ body{
     }
     .main-content-title{
         font-size: 40px;
+    }
+    .introduction{
+        height: 490px;
     }
 }
 .logo{
@@ -326,6 +350,7 @@ body{
     width: 50%;
 }
 .introduction{
+    overflow-y: scroll;
     box-sizing: border-box;
     padding: 2px 2px 2px 20px;
     line-height: 1.5;
@@ -341,7 +366,10 @@ body{
     font-weight: bold;
     border-bottom: 2px darkblue solid;
 }
-.read_more_about_council{
+#more_intro{
+    display: none;
+}
+.read_more_about_council,.read_more_intro{
     background-color: transparent;
     border: transparent;
     color: #135a9c;
@@ -377,9 +405,11 @@ body{
     }
     .introduction{
         padding: 2px 2px 2px 2px;
+        line-height: 1.6;
     }
     .introduction>h1{
         margin-top: 2%;
+        font-size: large;
     }
     #main-content-2{
         line-height: 1.6;
