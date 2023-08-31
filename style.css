@@ -319,10 +319,13 @@ body{
     font-weight: bold;
 }
 .council_acts>div{
-    padding: 2% 2% 2% 2%;
-}
-.council_acts>div>span{
+    display: flex;
+    justify-content: space-between;
+    min-width: 60%;
+    padding: 2% 2% 2% 2%;}
+.council_acts>div>span>a{
     color: red;
+    text-decoration: none;
 }
 
 /*--------------------------------DOWNLOAD FORMS----------------------------*/
@@ -339,8 +342,9 @@ body{
     min-width: 60%;
     padding: 2% 2% 2% 2%;
 }
-.download-forms-class>div>span{
+.download-forms-class>div>span>a{
     color: red;
+    text-decoration: none;
 }
 /*-------------------------------CONTACT US--------------------------------*/
 .contact-class{
