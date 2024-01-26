@@ -63,6 +63,48 @@
 
         </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+        <div>
+            Sitemap
+            <br><a href="#" id="web_link_19">Home</a>
+            <br><a href="#" id="web_link_20">Registration Renewal</a>
+            <br><a href="#" id="web_link_21">Trainings Orgainsed</a>
+            <br><a href="#" id="web_link_22">Registration, Renewal, Transfer Data</a>
+            <br><a href="#" id="web_link_23">Snapshots of Activities</a>
+            <br><a href="#" id="web_link_24">Council Acts</a>
+            <br><a href="#" id="web_link_25">Download Forms</a>
+            <br><a href="#" id="web_link_26">Guest House</a>
+            <br><a href="#" id="web_link_27">Contact Us</a>
+        </div>
+        
+        <div>
+            Contact:
+            <br>Phone: +91 81349 19017
+            <br>Email: avcassam2016@gmail.com
+            <br><br>Address: 
+            <br>Assam Veterinary Council
+            <br>A.H. & Vety. Deptt. Campus
+            <br>Chenikuthi, Guwahati-03
+            <br>Kamrup Metro, Assam
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch the JSON file
+            fetch("links.json")
+                .then(response => response.json())
+                .then(data => {
+                    // Update links based on JSON data
+                    data.fetchedLinks.forEach(link => {
+                        const element = document.getElementById(link.id);
+                        if (element) {
+                            element.href = link.url;
+                            element.innerText = link.text;
+                        }
+                    });
+                })
+                .catch(error => console.error("Error fetching JSON:", error));
+        });
+    </script>
 </body>
 </html>
