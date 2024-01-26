@@ -255,6 +255,14 @@
             #vet_data_table{
                 display: none;
             }
+            #after_table_note{
+                display: none;
+                width: 100%;
+                padding-top: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+                box-sizing: border-box;
+            }
     </style>
 </head>
 <body onload="slideshowInitialise();">
@@ -383,6 +391,7 @@
             
             function display_vet_data_table(){
                 document.getElementById("vet_data_table").style.display="block";
+                document.getElementById("after_table_note").style.display="block";
             }
         </script>
         <div id="main-content-2">
@@ -398,6 +407,7 @@
                 <tr><td>Registration ID</td><td id="vet_4"></td></tr>
                 <tr><td>Registration Validity</td><td id="vet_8"></td></tr>
             </table>
+            <div style="font-style: italic;" id="after_table_note">** Please contact Assam Veterinary Council at <a style="text-decoration: none;" href="mailto:avcassam2016@gmail.com">avcassam2016@gmail.com</a> or call us at <a style="text-decoration: none;" href="tel:+918134919017">+918134919017</a> regarding renewal of registration and information update. **</div>
             <div style="width: auto; height: 2em;"></div>
             <span>Doctor's Login / Registration Renewal</span>
             <div class="under_span_text">
