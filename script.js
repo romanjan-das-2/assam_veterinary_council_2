@@ -21,13 +21,4 @@ function createHeader(){
     xhttp.send();
 }
 
-function createFooter(){
-    const xhttp=new XMLHttpRequest();
-    xhttp.onload=function(){
-        document.getElementsByClassName("footer")[0].innerHTML=this.responseText;
-    }
-    xhttp.open("GET","footer.txt");
-    xhttp.send();
-}
-
-window.onload=createHeader(),createFooter();
+window.onload=createHeader();
