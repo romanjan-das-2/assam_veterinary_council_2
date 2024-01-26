@@ -292,13 +292,41 @@
             </div>
         <!------------------------------------------------------------------------------------------------------------------>
             <div class="introduction">
-                <h1 style="border-bottom: 2px darkblue solid;">Latest News and Updates</h1>
-                        <ul style="padding-left: 2%;">
-                            <li><span style="color: red; font-weight: bold;">IMPORTANT: </span>2023 VCI draft electoral roll is published. <a style="text-decoration: none;" href="https://drive.google.com/file/d/1ETTC1m2DldhYVgJf-pEQJ92pDw6NdpgM/view?usp=sharing">&#129034; Click here to view. </a>In case of any discrepancy mail us at <a href="mailto:avcassam2016@gmail.com" style="color: blue; text-decoration: none;">avcassam2016@gmail.com</a> or call us at <a href="tel:+918134919017" style="color: blue; text-decoration: none;">+918134919017</a> during office hours.</li>
-                            <br>
-                            <li><span style="color: red; font-weight: bold;">IMPORTANT: </span>Registration Renewal via online mode is temporarily disabled. For renewal of registration kindly contact Assam Veterinary Council at <a href="mailto:avcassam2016@gmail.com" style="color: blue; text-decoration: none;">avcassam2016@gmail.com</a> or <a href="tel:+918134919017" style="color: blue; text-decoration: none;">+918134919017</a> during office hours.</li>
-                        </ul>
             </div>
+            <script>
+                // Function to fetch CSV content, parse HTML, and insert it into a div
+                function fetchAndInsertHTMLFromCSV() {
+                  const csvURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRDhmUGkHuMQ_Y6ltP1ukD18NK_tMQ1I5WwXlMKhrasMrGxiWVBTeTxsqlEbIGIsTAodrDII7Werhfg/pub?gid=0&single=true&output=csv'; // Replace with the actual URL
+              
+                  fetch(csvURL)
+                    .then(response => {
+                      if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                      }
+                      return response.text();
+                    })
+                    .then(csvData => {
+                      // Parse the CSV data to extract the HTML code
+                      const htmlCode = parseHTMLFromCSV(csvData);
+              
+                      // Insert the HTML code into the div with class "introduction"
+                      console.log(htmlCode);
+                      document.getElementsByClassName('introduction')[0].innerHTML = htmlCode.substring(1, htmlCode.length - 1);
+                    })
+                    .catch(error => console.error('Error fetching or inserting HTML from CSV:', error));
+                }
+              
+                // Function to parse HTML from CSV data (replace this with your parsing logic)
+                function parseHTMLFromCSV(csvData) {
+                  // Example: Extracting HTML from the first column of the first row
+                  const rows = csvData.split('\n');
+                  const columns = rows[0].split(',');
+                  return columns[0];
+                }
+              
+                // Call the function when the page loads
+                document.addEventListener('DOMContentLoaded', fetchAndInsertHTMLFromCSV);
+              </script>
         </div>
         <!------------------------------------------------------------------------------------------------------------------>
         <script>
