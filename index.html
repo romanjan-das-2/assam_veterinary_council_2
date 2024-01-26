@@ -240,7 +240,7 @@
             table{
                 border-collapse:collapse;
                 margin: 2%;
-                margin-bottom: 6%;
+                margin-bottom: 0px;
                 width: 96%;
             }
             td{
@@ -251,6 +251,9 @@
                 text-align: left;
                 padding: 0.1em;
                 word-wrap: break-word;
+            }
+            #vet_data_table{
+                display: none;
             }
     </style>
 </head>
@@ -377,21 +380,25 @@
                     alert("Veterinary Practitioner not found");
                 }
             }
-    
+            
+            function display_vet_data_table(){
+                document.getElementById("vet_data_table").style.display="block";
+            }
         </script>
         <div id="main-content-2">
             <span>Quick Renewal Status Check</span>
             <div style="width: auto; height: 10px;"></div>
             <label for="regid" style="margin-left: 2%;">Registration ID: </label>
             <input type="text" name="regid" id="regid" value="ASM-0000">
-            <button type="button" onclick="search_vet();">Search</button>
+            <button type="button" onclick="search_vet();display_vet_data_table();">Search</button>
             <div style="width: auto; height: 7px;"></div>
-            <table>
+            <table id="vet_data_table">
                 <tr><td>Name of Veterinarian</td><td id="vet_1"></td></tr>
                 <tr><td>Father/Husband Name</td><td id="vet_2"></td></tr>
                 <tr><td>Registration ID</td><td id="vet_4"></td></tr>
                 <tr><td>Registration Validity</td><td id="vet_8"></td></tr>
             </table>
+            <div style="width: auto; height: 2em;"></div>
             <span>Doctor's Login / Registration Renewal</span>
             <div class="under_span_text">
                 <!--<a href="https://assamveterinarycouncil.com/renewal/" style="color: blue; cursor: pointer; text-decoration: none;">&#129034; Click Here for Registration Renewal.</a>            --->
