@@ -409,11 +409,14 @@ body{
 .introduction{
     overflow-y: hidden;
     box-sizing: border-box;
-    padding: 2px 2px 2px 20px;
+    padding: 15px 2px 2px 20px;
     line-height: 1.5;
 }
-.introduction>h1{
-    margin-top: 2%;
+.introduction>span{
+    /* padding-top: 2%; */
+    font-size: large;
+    font-weight: bold;
+    border-bottom: 2px darkblue solid;
 }
 .introduction>ul {
     padding-left: 0.7em;
@@ -471,11 +474,13 @@ body{
     .introduction{
         height: auto;
         padding: 2px 2px 2px 2px;
+        padding-top: 1.6em;
         line-height: 1.6;
     }
-    .introduction>h1{
-        margin-top: 0.7em;
+    .introduction>span {
         font-size: large;
+        font-weight: bold;
+        border-bottom: 2px darkblue solid;
     }
     .introduction>ul>li{
         margin-top: 0.5em;
