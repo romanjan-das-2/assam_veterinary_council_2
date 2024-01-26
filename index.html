@@ -378,9 +378,11 @@
                 document.getElementById("vet_8").innerText=foundPractitioner["REGISTRATION VALIDITY"];
                     if(foundPractitioner["REGISTRATION VALIDITY"]>=2024){
                         document.getElementById("vet_8").style.backgroundColor="#baffad";
+                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal up to date)"
                     }
                     else if(foundPractitioner["REGISTRATION VALIDITY"]<2024){
                         document.getElementById("vet_8").style.backgroundColor="#ffadad";
+                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal pending)"
                     }
                 }
                 else 
