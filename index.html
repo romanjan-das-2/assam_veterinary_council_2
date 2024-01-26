@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assam Veterinary Council</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <!---------------  BELOW IS THE SCRIPT FOR THE SLIDESHOW  ----------------------------->
         <script>
@@ -235,6 +236,23 @@
             box-sizing: border-box;
         }
     </style>
+    <style>
+            table{
+                border-collapse:collapse;
+                margin: 2%;
+                margin-bottom: 6%;
+                width: 96%;
+            }
+            td{
+                width: 49vw;
+            }
+            td, th {
+                border: 1px solid #4c4c4c;
+                text-align: left;
+                padding: 8px;
+                word-wrap: break-word;
+            }
+    </style>
 </head>
 <body onload="slideshowInitialise();">
     <div class="left-div"></div>
@@ -283,8 +301,70 @@
             </div>
         </div>
         <!------------------------------------------------------------------------------------------------------------------>
+        <script>
+            var vetPractitioners;
+            var desiredRegistrationId;
+            var foundPractitioner;
+            fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSXrsjkbK8DK1m9RdEERKwamJ97LZ34R08SSzfpsdYXTQEMVWts3Z48EiHrEb0kPQ/pub?gid=249554905&single=true&output=csv')
+            .then(response => response.text())
+            .then(csvData => {
+                Papa.parse(csvData, {
+                header: true,
+                dynamicTyping: true,
+                complete: function(results) {
+                    // Now 'results.data' contains the JSON representation of the CSV data
+                    vetPractitioners=results.data;
+                },
+                error: function(error) {
+                    console.error('Error parsing CSV:', error);
+                }
+                });
+            })
+            .catch(error => console.error('Error fetching CSV:', error));
+    
+    
+            function search_vet(){
+                // Replace 'desiredRegistrationId' with the registration ID you want to search for
+                //desiredRegistrationId="ASM-3331";
+                desiredRegistrationId = document.getElementById("regid").value;
+    
+                foundPractitioner = vetPractitioners.find(
+                (practitioner) => practitioner["REGISTRATION ID"] === desiredRegistrationId
+                );
+    
+                if (foundPractitioner) {
+                document.getElementById("vet_1").innerText=foundPractitioner["REGISTERED VETERINARY PRACTITIONER"];
+                document.getElementById("vet_2").innerText=foundPractitioner["NAME OF FATHER OR HUSBAND"];
+                document.getElementById("vet_4").innerText=foundPractitioner["REGISTRATION ID"];
+                document.getElementById("vet_8").innerText=foundPractitioner["REGISTRATION VALIDITY"];
+                    if(foundPractitioner["REGISTRATION VALIDITY"]>=2024){
+                        document.getElementById("vet_8").style.backgroundColor="#baffad";
+                    }
+                    else if(foundPractitioner["REGISTRATION VALIDITY"]<2024){
+                        document.getElementById("vet_8").style.backgroundColor="#ffadad";
+                    }
+                }
+                else 
+                {
+                    alert("Veterinary Practitioner not found");
+                }
+            }
+    
+        </script>
         <div id="main-content-2">
             <br>
+            <span>Quick Renewal Status Check</span>
+            <div style="width: auto; height: 10px;"></div>
+            <label for="regid" style="margin-left: 2%;">Registration ID: </label>
+            <input type="text" name="regid" id="regid" value="ASM-0000">
+            <button type="button" onclick="search_vet();">Search</button>
+            <div style="width: auto; height: 7px;"></div>
+            <table>
+                <tr><td>Name of Veterinarian</td><td id="vet_1"></td></tr>
+                <tr><td>Father/Husband Name</td><td id="vet_2"></td></tr>
+                <tr><td>Registration ID</td><td id="vet_4"></td></tr>
+                <tr><td>Registration Validity</td><td id="vet_8"></td></tr>
+            </table>
             <span>Doctor's Login / Registration Renewal</span>
             <div class="under_span_text"><a href="https://assamveterinarycouncil.com/renewal/" style="color: blue; cursor: pointer; text-decoration: none;">&#129034; Click Here for Registration Renewal.</a></div>
             
