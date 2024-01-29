@@ -433,6 +433,7 @@
         </div>
         <!------------------------------------------------------------------------------------------------------------------>
         <script>
+            const currentYear=new Date().getFullYear();
             var vetPractitioners;
             var desiredRegistrationId;
             var foundPractitioner;
@@ -468,11 +469,11 @@
                 document.getElementById("vet_2").innerText=foundPractitioner["NAME OF FATHER OR HUSBAND"];
                 document.getElementById("vet_4").innerText=foundPractitioner["REGISTRATION ID"];
                 document.getElementById("vet_8").innerText=foundPractitioner["REGISTRATION VALIDITY"];
-                    if(foundPractitioner["REGISTRATION VALIDITY"]>=2024){
+                    if(foundPractitioner["REGISTRATION VALIDITY"]>=currentYear){
                         document.getElementById("vet_8").style.backgroundColor="#baffad";
                         document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal up to date)"
                     }
-                    else if(foundPractitioner["REGISTRATION VALIDITY"]<2024){
+                    else if(foundPractitioner["REGISTRATION VALIDITY"]<currentYear){
                         document.getElementById("vet_8").style.backgroundColor="#ffadad";
                         document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal pending)"
                     }
