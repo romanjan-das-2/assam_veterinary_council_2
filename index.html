@@ -458,7 +458,11 @@
             function search_vet(){
                 // Replace 'desiredRegistrationId' with the registration ID you want to search for
                 //desiredRegistrationId="ASM-3331";
-                desiredRegistrationId = "ASM-"+document.getElementById("regid").value;
+                desiredRegistrationId=document.getElementById("regid").value;
+                while (desiredRegistrationId.length < 4) {
+                desiredRegistrationId = '0' + desiredRegistrationId;
+                }
+                desiredRegistrationId = "ASM-"+desiredRegistrationId;
                 console.log(desiredRegistrationId);
 
                 foundPractitioner = vetPractitioners.find(
