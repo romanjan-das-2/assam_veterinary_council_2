@@ -488,13 +488,30 @@
                 document.getElementById("vet_2").innerText=foundPractitioner["NAME OF FATHER OR HUSBAND"];
                 document.getElementById("vet_4").innerText=foundPractitioner["REGISTRATION ID"];
                 document.getElementById("vet_8").innerText=foundPractitioner["REGISTRATION VALIDITY"];
-                    if(foundPractitioner["REGISTRATION VALIDITY"]>=currentYear){
-                        document.getElementById("vet_8").style.backgroundColor="#baffad";
-                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal up to date)"
+                    if(foundPractitioner["REGISTRATION VALIDITY"]!=null){
+                        var temp_year=foundPractitioner["REGISTRATION VALIDITY"];
+                        if(foundPractitioner["REGISTRATION VALIDITY"]>=currentYear){
+                            document.getElementById("vet_8").style.backgroundColor="#baffad";
+                            document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal up to date)";
+                            temp_year=temp_year+5;
+                            console.log("Fee upto="+temp_year+" | "+"Amount to be paid="+"Rs. 200");
+                            console.log("Fee upto="+(temp_year+5)+" | "+"Amount to be paid="+"Rs. 400");
+                        }
+                        else if(foundPractitioner["REGISTRATION VALIDITY"]<currentYear){
+                            document.getElementById("vet_8").style.backgroundColor="#ffadad";
+                            document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal pending)";
+                            var renewal_fine=0; var temp_renewal_fee=0;
+                            while(temp_year<currentYear){
+                                temp_year=temp_year+5;
+                                renewal_fine=renewal_fine+30;
+                                temp_renewal_fee=temp_renewal_fee+200;
+                            }
+                            console.log("Fee upto="+temp_year+" | "+"Amount to be paid=Rs. "+(temp_renewal_fee+renewal_fine));
+                            console.log("Fee upto="+(temp_year+5)+" | "+"Amount to be paid=Rs. "+(temp_renewal_fee+renewal_fine+200));
+                        }
                     }
-                    else if(foundPractitioner["REGISTRATION VALIDITY"]<currentYear){
-                        document.getElementById("vet_8").style.backgroundColor="#ffadad";
-                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal pending)"
+                    else{
+                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" No renewal information found"
                     }
                 }
                 else 
