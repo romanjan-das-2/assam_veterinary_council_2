@@ -488,7 +488,9 @@
                 document.getElementById("vet_2").innerText=foundPractitioner["NAME OF FATHER OR HUSBAND"];
                 document.getElementById("vet_4").innerText=foundPractitioner["REGISTRATION ID"];
                 document.getElementById("vet_8").innerText=foundPractitioner["REGISTRATION VALIDITY"];
-                    if(foundPractitioner["REGISTRATION VALIDITY"]!=null){
+                console.log(!isNaN(foundPractitioner["REGISTRATION VALIDITY"]));
+                console.log(foundPractitioner["REGISTRATION VALIDITY"]!=null);
+                    if(!isNaN(foundPractitioner["REGISTRATION VALIDITY"]) && foundPractitioner["REGISTRATION VALIDITY"]!=null){
                         var temp_year=foundPractitioner["REGISTRATION VALIDITY"];
                         if(foundPractitioner["REGISTRATION VALIDITY"]>=currentYear){
                             document.getElementById("vet_8").style.backgroundColor="#baffad";
@@ -511,7 +513,7 @@
                         }
                     }
                     else{
-                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" No renewal information found"
+                        document.getElementById("vet_8").innerHTML=document.getElementById("vet_8").innerHTML+" (Renewal pending)";
                     }
                 }
                 else 
