@@ -579,6 +579,14 @@
                 <tr><td id="rft_1"></td><td id="rft_2"></td></tr>
                 <tr><td id="rft_3"></td><td id="rft_4"></td></tr>
             </table>
+            <button onclick="send_whatsapp_message_for_payment()">I wanna pay</button>
+            <script>
+                function send_whatsapp_message_for_payment(){
+                    var message_text="I, Mr. (Sri) Jason Bourne bearing registration number ASM-9980, want to renew my registration upto year 2030 from 2010. I am will pay Rs. 890 via UPI";
+                    var encodedMessage = encodeURIComponent(message_text);
+                    window.open("https://wa.me/+917086336183?text="+encodedMessage,"_blank");
+                }
+            </script>
             <div style="font-style: italic;" id="after_table_note">** Please contact Assam Veterinary Council at <a style="text-decoration: none;" href="mailto:avcassam2016@gmail.com">avcassam2016@gmail.com</a> or call us at <a style="text-decoration: none;" href="tel:+918134919017">+918134919017</a> regarding renewal of registration and information update.</div>
             <div style="width: auto; height: 1.6em;"></div>
             <span>Doctor's Login / Registration Renewal</span>
