@@ -375,29 +375,20 @@
 <body onload="slideshowInitialise();">
     <div onclick="hide_popup_contact();" id="pop_up_contact_modal">
         <div id="pop_up_contact_modal_inside">
-            <button onclick="contact_avc_for_payment(1,1)">Contact via Whatsapp</button>
-            <button onclick="contact_avc_for_payment(2,1)">&nbsp;&nbsp;&nbsp;Contact via Phone&nbsp;&nbsp;&nbsp;</button>
-            <button onclick="contact_avc_for_payment(3,1)">&nbsp;&nbsp;&nbsp;Contact via E-mail&nbsp;&nbsp;&nbsp;</button>
+            <button onclick="contact_avc_for_payment(1)">Contact via Whatsapp</button>
+            <button onclick="contact_avc_for_payment(2)">&nbsp;&nbsp;&nbsp;Contact via Phone&nbsp;&nbsp;&nbsp;</button>
+            <button onclick="contact_avc_for_payment(3)">&nbsp;&nbsp;&nbsp;Contact via E-mail&nbsp;&nbsp;&nbsp;</button>
         </div>
     </div>
     <script>
-        function contact_avc_for_payment(param1,param2){
-            if(param1==1 && param2==1){
+        function contact_avc_for_payment(param){
+            if(param==1){
                 window.open('https://wa.me/+918134919017');
             }
-            else if(param1==2 && param2==1){
+            else if(param==2){
                 window.open('tel:+918134919017');
             }
-            else if(param1==3 && param2==1){
-                window.open('mailto:avcassam2016@gmail.com?subject=Your%20Subject&body=Your%20Pre-written%20Text');
-            }
-            else if(param1==1 && param2==2){
-                window.open('https://wa.me/+918134919017');
-            }
-            else if(param1==2 && param2==2){
-                window.open('tel:+918134919017');
-            }
-            else if(param1==3 && param2==2){
+            else if(param==3){
                 window.open('mailto:avcassam2016@gmail.com?subject=Your%20Subject&body=Your%20Pre-written%20Text');
             }
         }
