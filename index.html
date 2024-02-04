@@ -417,7 +417,7 @@
                 encoded_contact_message_generated= encodeURIComponent(contact_message_generated);
             }
             else if(param==2){
-                contact_message_generated="Hi, I would like to pay the fee for renewal of my registration";
+                contact_message_generated="Hi, I, "+document.getElementById("vet_1").innerHTML+", bearing registration number: "+document.getElementById("vet_4").innerHTML+", would like to pay the fee for renewal of my registration";
                 encoded_contact_message_generated= encodeURIComponent(contact_message_generated);
             }
         }
