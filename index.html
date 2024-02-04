@@ -375,21 +375,33 @@
 <body onload="slideshowInitialise();">
     <div onclick="hide_popup_contact();" id="pop_up_contact_modal">
         <div id="pop_up_contact_modal_inside">
-            <button onclick="contact_avc_for_payment(1)">Contact via Whatsapp</button>
-            <button onclick="contact_avc_for_payment(2)">&nbsp;&nbsp;&nbsp;Contact via Phone&nbsp;&nbsp;&nbsp;</button>
-            <button onclick="contact_avc_for_payment(3)">&nbsp;&nbsp;&nbsp;Contact via E-mail&nbsp;&nbsp;&nbsp;</button>
+            <button onclick="url_encoding_for_contacts(1); contact_avc_for_payment(1)">Contact via Whatsapp</button>
+            <button onclick="url_encoding_for_contacts(1); contact_avc_for_payment(2)">&nbsp;&nbsp;&nbsp;Contact via Phone&nbsp;&nbsp;&nbsp;</button>
+            <button onclick="url_encoding_for_contacts(1); contact_avc_for_payment(3)">&nbsp;&nbsp;&nbsp;Contact via E-mail&nbsp;&nbsp;&nbsp;</button>
         </div>
     </div>
     <script>
-        function contact_avc_for_payment(param){
+        var contact_message_generated="";
+        var encoded_contact_message_generated="";
+        function url_encoding_for_contacts(param){
             if(param==1){
-                window.open('https://wa.me/+918134919017');
+                contact_message_generated="Hi, I would like to pay the fee of Rs. 100 for issuing of Identity Card";
+                encoded_contact_message_generated= encodeURIComponent(contact_message_generated);
             }
             else if(param==2){
-                window.open('tel:+918134919017');
+                contact_message_generated="Hi, I would like to pay the fee for renewal of my registration";
+                encoded_contact_message_generated= encodeURIComponent(contact_message_generated);
+            }
+        }
+        function contact_avc_for_payment(param){
+            if(param==1){
+                window.open("https://wa.me/+918134919017"+"?text="+encoded_contact_message_generated);
+            }
+            else if(param==2){
+                window.open("tel:+918134919017");
             }
             else if(param==3){
-                window.open('mailto:avcassam2016@gmail.com?subject=Your%20Subject&body=Your%20Pre-written%20Text');
+                window.open("mailto:avcassam2016@gmail.com?subject="+encoded_contact_message_generated+"&body="+encoded_contact_message_generated);
             }
         }
     </script>
