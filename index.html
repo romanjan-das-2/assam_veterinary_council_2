@@ -250,6 +250,7 @@
             }
             #after_table_note{
                 display: none;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 width: 100%;
@@ -257,6 +258,18 @@
                 padding-left: 1em;
                 padding-right: 1em;
                 box-sizing: border-box;
+            }
+            #after_table_note>button{
+                width: 100%;
+                margin-top: 0.7rem;
+                background-image: linear-gradient(#42A1EC, #0070C9);
+                border: 1px solid #0077CC;
+                border-radius: 4px;
+                box-sizing: border-box;
+                color: #FFFFFF;
+                cursor: pointer;
+                min-height: 2rem;
+                font-weight: bold;
             }
             #renewal_fee_table_label,#renewal_fee_table{
                 display: none;
@@ -331,31 +344,8 @@
                 color: #FFFFFF;
                 cursor: pointer;
                 min-height: 2rem;
-            }
-            #pop_up_contact_modal{
-                z-index:5; 
-                position: fixed; 
-                left: 0px; right: 0px; 
-                width: 100%; height: 100%; 
-                background-color: rgba(0, 0, 0, 0.616); 
-                display: none; align-items: center; justify-content: center;
-            }
-            #pop_up_contact_modal_inside{
-                padding: 4%; box-sizing: border-box; 
-                background-color: rgb(238, 238, 238); border-radius: 7px; border: solid darkgrey 1px;
-                display: flex; align-items: center; justify-content: center; flex-direction: column;
-                width: 90%;
-            }
-            #pop_up_contact_modal_inside>button{
-                background-image: linear-gradient(#42A1EC, #0070C9);
-                border: 1px solid #0077CC;
-                border-radius: 4px;
-                box-sizing: border-box;
-                color: #FFFFFF;
-                cursor: pointer;
-                margin-top: 2%; margin-bottom: 2%;
-                margin-top: 4%; margin-bottom: 4%;
-                width: 90%; min-height: 2rem;
+                min-width: 5rem;
+                font-weight: bold;
             }
             #contact_council_for_payment{
                 background-image: linear-gradient(#42A1EC, #0070C9);
@@ -374,31 +364,12 @@
                 box-sizing: border-box;
                 color: #FFFFFF;
                 cursor: pointer;
-                margin-top: 5%; margin-bottom: 2%;
-                width: 90%; min-height: 2rem;
-            }
-            #contact_council_for_payment_renewal{
-                background-image: linear-gradient(#42A1EC, #0070C9);
-                border: 1px solid #0077CC;
-                border-radius: 4px;
-                box-sizing: border-box;
-                color: #FFFFFF;
-                cursor: pointer;
-                margin-top: 4%; margin-bottom: 2%;
-                width: 90%; min-height: 2rem;
-            }
-            #id_card_info_para{
-                font-style: italic; margin-left: 2%; margin-right: 1%;
+                margin-top: 1rem;
+                width: 100%;
+                min-height: 2rem;
+                font-weight: bold;
             }
             @media(orientation:landscape){
-                #contact_council_for_payment_renewal,#id_card_form_fill_up_button,#contact_council_for_payment{
-                    background-image: none;
-                    background-color: white;
-                    color: #2a75bb;
-                    text-align: left;
-                    text-decoration: underline;
-                    border: none;
-                }
                 #after_table_note{
                     padding-top: 0px;
                     justify-content: flex-start;
@@ -409,18 +380,6 @@
                     padding-left: 0px;
                     margin-top: 0px;
                     margin-left: 4%;
-                }
-                #contact_council_for_payment_renewal{
-                    width: 23rem; height: 2rem; margin-top: 5px; margin-bottom: 0px; margin-left: 2%; padding-left: 0px;
-                }
-                #id_card_form_fill_up_button,#contact_council_for_payment{
-                    width: 50%; margin-right: 0px; margin-top: 0px; margin-bottom: 0px; padding: 0px;
-                }
-                #id_card_info_para{
-                    margin-left: 0px; margin-top: 0px;
-                }
-                #pop_up_contact_modal_inside{
-                    width: 33%;
                 }
                 #office_staff_table{
                     width: 50%;
@@ -438,25 +397,12 @@
     </style>
 </head>
 <body onload="slideshowInitialise();">
-    <div onclick="hide_popup_contact();" id="pop_up_contact_modal">
-        <div id="pop_up_contact_modal_inside">
-            <button onclick="contact_avc_for_payment(1)">Contact via Whatsapp</button>
-            <button onclick="contact_avc_for_payment(2)">&nbsp;&nbsp;&nbsp;Contact via Phone&nbsp;&nbsp;&nbsp;</button>
-            <button onclick="contact_avc_for_payment(3)">&nbsp;&nbsp;&nbsp;Contact via E-mail&nbsp;&nbsp;&nbsp;</button>
-        </div>
-    </div>
     <script>
         var contact_message_generated="";
         var encoded_contact_message_generated="";
-        function url_encoding_for_contacts(param){
-            if(param==1){
-                contact_message_generated="Hi, I would like to pay the fee of Rs. 100 for issuing of Identity Card";
-                encoded_contact_message_generated= encodeURIComponent(contact_message_generated);
-            }
-            else if(param==2){
+        function url_encoding_for_contacts(){
                 contact_message_generated="Hi, I, "+document.getElementById("vet_1").innerHTML+", bearing registration number: "+document.getElementById("vet_4").innerHTML+", would like to pay the fee for renewal of my registration";
                 encoded_contact_message_generated= encodeURIComponent(contact_message_generated);
-            }
         }
         function contact_avc_for_payment(param){
             if(param==1){
@@ -683,7 +629,7 @@
             }
         </script>
         <div id="main-content-2">
-            <span>Quick Renewal Status Check</span>
+            <span>Registration Renewal Status Check</span>
             <div style="width: auto; height: 10px;"></div>
             <label id="label_for_regid" for="regid" style="margin-left: 2%;">Registration ID: &nbsp;<span>ASM-</span></label>
             <input type="text" name="regid" id="regid" placeholder="0000" oninput="validateInput(this)">
@@ -717,9 +663,12 @@
                 <tr><td id="rft_3"></td><td id="rft_4"></td></tr>
             </table>
             <div id="after_table_note">
-                <button id="contact_council_for_payment_renewal" onclick="url_encoding_for_contacts(2); show_popup_contact();">Contact Council for Payment of Renewal</button>
+                <span style="font-weight: bold; font-style: italic; color: darkblue;">Note: Please contact Assam Veterinary Council for the payment of registration renewal fee. You can contact council via following ways:</span>
+                <button onclick="url_encoding_for_contacts();contact_avc_for_payment(1);">Contact us via Whatsapp</button>
+                <button onclick="url_encoding_for_contacts();contact_avc_for_payment(3);">Contact us via E-mail</button>
+                <button onclick="url_encoding_for_contacts();contact_avc_for_payment(2);">Contact us via Phone</button>
             </div>
-            <div style="width: auto; height: 1.6em;"></div>
+            <div style="width: auto; height: 2rem;"></div>
             <!--
             <span>Doctor's Login / Registration Renewal</span>
             <div class="under_span_text">
@@ -727,19 +676,9 @@
                 Online payment for renewal of registration is temporarily disabled.
             </div>
             ---->
-            <script>
-                function show_popup_contact(){
-                    document.getElementById("pop_up_contact_modal").style.display="flex";
-                }
-                function hide_popup_contact(){
-                    document.getElementById("pop_up_contact_modal").style.display="none";
-                }
-            </script>
             <span>Apply for Identity Card</span>
             <div class="under_span_text">
-                <button id="id_card_form_fill_up_button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQTtd-I0rr33M95X1-_XYutHFWPWZ0NXDGmyr8gUmUNZmnAQ/viewform?usp=sf_link');">Click here to apply for an Identity Card</button>
-                <button id="contact_council_for_payment" onclick="url_encoding_for_contacts(1); show_popup_contact();">Contact Council for Payment after form fill-up</button>
-                <p id="id_card_info_para">Please keep the payment receipt with you for verification purpose.</p>
+                <button id="id_card_form_fill_up_button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQTtd-I0rr33M95X1-_XYutHFWPWZ0NXDGmyr8gUmUNZmnAQ/viewform?usp=sf_link');">Apply for an Identity Card</button>
             </div>
             <span>Introduction</span>
             <div class="new_intro_section">
