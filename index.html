@@ -384,8 +384,10 @@
                 margin-top: 0.7rem;
             }
             #after_table_note_button_div{
+                width: 100%;
                 margin-top: 1rem;
-                display: inline-block;
+                display: flex;
+                justify-content: space-between;
             }
             #after_table_note_button_div>button{
                 width: 7rem;
@@ -667,7 +669,7 @@
                             }
                             document.getElementById("renewal_fee_table_label").style.display="block";
                             document.getElementById("renewal_fee_table").style.display="block";
-                            document.getElementById("after_table_note_button_div").style.display="inline-block";
+                            document.getElementById("after_table_note_button_div").style.display="flex";
 
                         }
                         else if(foundPractitioner["REGISTRATION VALIDITY"]==currentYear){
@@ -679,7 +681,7 @@
                             document.getElementById("rft_2").innerHTML=200;
                             document.getElementById("renewal_fee_table_label").style.display="block";
                             document.getElementById("renewal_fee_table").style.display="block";
-                            document.getElementById("after_table_note_button_div").style.display="inline-block";
+                            document.getElementById("after_table_note_button_div").style.display="flex";
 
                         }
                     }
