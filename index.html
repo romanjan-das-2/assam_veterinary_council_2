@@ -657,8 +657,14 @@
                                 renewal_fine=renewal_fine+30;
                                 temp_renewal_fee=temp_renewal_fee+200;
                             }
-                            document.getElementById("rft_1").innerHTML=temp_year;
-                            document.getElementById("rft_2").innerHTML=temp_renewal_fee+renewal_fine;
+                            if(temp_year==currentYear){
+                                document.getElementById("rft_1").innerHTML=temp_year+5;
+                                document.getElementById("rft_2").innerHTML=temp_renewal_fee+renewal_fine+200;
+                            }
+                            else{
+                                document.getElementById("rft_1").innerHTML=temp_year;
+                                document.getElementById("rft_2").innerHTML=temp_renewal_fee+renewal_fine;
+                            }
                             document.getElementById("renewal_fee_table_label").style.display="block";
                             document.getElementById("renewal_fee_table").style.display="block";
                             document.getElementById("after_table_note_button_div").style.display="inline-block";
