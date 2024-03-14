@@ -624,8 +624,6 @@
                             temp_year=temp_year+5;
                             document.getElementById("rft_1").innerHTML=temp_year;
                             document.getElementById("rft_2").innerHTML=200;
-                            document.getElementById("rft_3").innerHTML=temp_year+5;
-                            document.getElementById("rft_4").innerHTML=400;
                         }
                         else if(foundPractitioner["REGISTRATION VALIDITY"]<currentYear){
                             document.getElementById("vet_8").style.backgroundColor="#ffadad";
@@ -640,8 +638,6 @@
                             }
                             document.getElementById("rft_1").innerHTML=temp_year;
                             document.getElementById("rft_2").innerHTML=temp_renewal_fee+renewal_fine;
-                            document.getElementById("rft_3").innerHTML=temp_year+5;
-                            document.getElementById("rft_4").innerHTML=temp_renewal_fee+renewal_fine+200;
                         }
                     }
                     else{
@@ -659,8 +655,6 @@
                     document.getElementById("vet_8").innerText="";
                     document.getElementById("rft_1").innerHTML="_";
                     document.getElementById("rft_2").innerHTML="_";
-                    document.getElementById("rft_3").innerHTML="_";
-                    document.getElementById("rft_4").innerHTML="_";
                     document.getElementById("after_table_note_span").innerHTML="";
                     document.getElementById("after_table_note_contact").innerHTML="";
                     alert("Veterinary Practitioner not found");
@@ -704,7 +698,6 @@
             <table id="renewal_fee_table">
                 <tr><td>Renewal Upto Year</td><td>Renewal Fee (Rs.)</td></tr>
                 <tr><td id="rft_1"></td><td id="rft_2"></td></tr>
-                <tr><td id="rft_3"></td><td id="rft_4"></td></tr>
             </table>
             <div id="after_table_note">
                 <span id="after_table_note_span">Note: Please contact Assam Veterinary Council for the payment of registration renewal fee. You can contact council via following ways:</span>
